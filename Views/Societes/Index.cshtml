@@ -1,0 +1,56 @@
+﻿@model IEnumerable<projet_dotnet.Models.Societe>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="content">
+    <p>
+        <button type="button" class="btn btn-warning"><a asp-action="Create">Ajouter Societe</a></button>
+    </p>
+    <div class="container">
+
+
+        <div class="table-responsive">
+
+            <table class="table table-striped custom-table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Lib)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Adresse)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Tel)
+                        </th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Lib)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Adresse)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Tel)
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-dark"><a asp-action="Edit" asp-route-id="@item.ID">Edit</a></button>|
+                                <button type="button" class="btn btn-dark"><a asp-action="Details" asp-route-id="@item.ID">Details</a></button>|
+                                <button type="button" class="btn btn-dark"><a asp-action="Delete" asp-route-id="@item.ID">Delete</a></button>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

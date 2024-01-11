@@ -1,0 +1,38 @@
+﻿@model projet_dotnet.Models.Pfe_Etudiant
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="content">
+
+    <div class="container">
+
+        <h4>Pfe_Etudiant</h4>
+        <div class="table-responsive">
+
+            <table class="table table-striped custom-table">
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Pfe)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Pfe.Titre)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Etudiant)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Etudiant.Nom)
+                        </td>
+
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-outline-warning"><a asp-action="Edit" asp-route-id="@Model?.ID">Edit</a></button>
+            <button type="button" class="btn btn-outline-warning"><a asp-action="Index">Back To List</a></button>
+        </div>
+    </div>
+</div>

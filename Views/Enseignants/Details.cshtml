@@ -1,0 +1,38 @@
+﻿@model projet_dotnet.Models.Enseignant
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="content">
+
+    <div class="container">
+
+        <h4>Enseignant</h4>
+        <div class="table-responsive">
+
+            <table class="table table-striped custom-table">
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Nom)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Nom)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Prenom)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Prenom)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-outline-warning"><a asp-action="Edit" asp-route-id="@Model?.ID">Edit</a></button>
+            <button type="button" class="btn btn-outline-warning"><a asp-action="Index">Back To List</a></button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<projet_dotnet.Models.Pfe>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="content">
+    <p>
+        <button type="button" class="btn btn-warning"><a asp-action="Create">Ajouter Pfe</a></button>
+    </p>
+    <div class="container">
+
+
+        <div class="table-responsive">
+
+            <table class="table table-striped custom-table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Titre)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Desc)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DateD)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DateF)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Encadrant)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Societe)
+                        </th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Titre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Desc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateD)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateF)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Encadrant.NomPrenom)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Societe.Lib)
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-dark"><a asp-action="Edit" asp-route-id="@item.PfeId">Edit</a></button>|
+                                <button type="button" class="btn btn-dark"><a asp-action="Details" asp-route-id="@item.PfeId">Details</a></button>|
+                                <button type="button" class="btn btn-dark"><a asp-action="Delete" asp-route-id="@item.PfeId">Delete</a></button>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

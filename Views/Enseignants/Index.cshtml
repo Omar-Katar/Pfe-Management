@@ -1,0 +1,53 @@
+﻿@model IEnumerable<projet_dotnet.Models.Enseignant>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="content">
+    <p>
+        <button type="button" class="btn btn-warning"><a asp-action="Create">Ajouter Enseignant</a></button>
+    </p>
+    <div class="container">
+
+
+        <div class="table-responsive">
+
+            <table class="table table-striped custom-table">
+                <thead>
+                    <tr>
+
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Nom)
+
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Prenom)
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr scope="row">
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nom)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Prenom)
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-dark"><a asp-action="Edit" asp-route-id="@item.ID">Edit</a></button>|
+                                <button type="button" class="btn btn-dark"><a asp-action="Details" asp-route-id="@item.ID">Details</a></button>|
+                                <button type="button" class="btn btn-dark"><a asp-action="Delete" asp-route-id="@item.ID">Delete</a></button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

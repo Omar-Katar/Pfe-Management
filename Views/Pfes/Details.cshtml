@@ -1,0 +1,70 @@
+﻿@model projet_dotnet.Models.Pfe
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="content">
+
+    <div class="container">
+
+        <h4>Pfe</h4>
+        <div class="table-responsive">
+
+            <table class="table table-striped custom-table">
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Titre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Titre)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Desc)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Desc)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.DateD)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.DateD)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.DateF)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.DateF)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Encadrant)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Encadrant.Nom)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Societe)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Societe.Lib)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-outline-warning"><a asp-action="Edit" asp-route-id="@Model?.PfeId">Edit</a></button>
+            <button type="button" class="btn btn-outline-warning"><a asp-action="Index">Back To List</a></button>
+        </div>
+    </div>
+</div>

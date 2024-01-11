@@ -1,0 +1,47 @@
+﻿@model projet_dotnet.Models.Societe
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Ajouter Societe</h3>
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="col-md-12">
+                            <label asp-for="Lib" class="control-label"></label>
+                            <input asp-for="Lib" class="form-control" />
+                            <span asp-validation-for="Lib" class="text-danger"></span>
+                        </div>
+                       <div class="col-md-12">
+                        <label asp-for="Adresse" class="control-label"></label>
+                        <input asp-for="Adresse" class="form-control" />
+                        <span asp-validation-for="Adresse" class="text-danger"></span>
+                       </div>
+                       <div class="col-md-12">
+                        <label asp-for="Tel" class="control-label"></label>
+                        <input asp-for="Tel" class="form-control" />
+                        <span asp-validation-for="Tel" class="text-danger"></span>
+                       </div>
+                        <div class="form-button mt-3">
+                            <input type="submit" value="Create" class="btn btn-warning" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <button type="button" class="btn btn-outline-warning"><a asp-action="Index">Back To List</a></button>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
